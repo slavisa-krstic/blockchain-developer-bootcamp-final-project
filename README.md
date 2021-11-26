@@ -18,7 +18,7 @@ Guess the number is simple game. Owner of the games set numbers and the players 
 - Node.js >= v12
 - Truffle and Ganache
 - Npm
-- `git checkout master`
+- `git checkout main`
 
 ### Contracts
 
