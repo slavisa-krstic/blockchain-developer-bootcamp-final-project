@@ -1,0 +1,27 @@
+{
+  "name": "blockchain-developer-bootcamp-final-project",
+  "version": "1.0.0",
+  "description": "Final project for Consensys bootcamp",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slavisa-krstic/blockchain-developer-bootcamp-final-project.git"
+  },
+  "author": "Slavisa Krstic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/slavisa-krstic/blockchain-developer-bootcamp-final-project/issues"
+  },
+  "homepage": "https://github.com/slavisa-krstic/blockchain-developer-bootcamp-final-project#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.3",
+    "@truffle/hdwallet-provider": "^1.7.0",
+    "dotenv": "^10.0.0"
+  }
+}
