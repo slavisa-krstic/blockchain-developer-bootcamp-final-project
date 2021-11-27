@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container'
@@ -21,7 +20,9 @@ const CreateGuessNumberGame = () => {
   const {
     guessNumber,
     setGuessNumber,
-    createNewGuessNumberGame
+    createNewGuessNumberGame,
+    numberOfAvailableGames,
+    waitingTx
   } = useGuessNumberGame();
 
   const {
@@ -32,12 +33,8 @@ const CreateGuessNumberGame = () => {
     ethereumBalance
   } = useEthereumBalance();
 
-  const {
-    numberOfAvailableGames
-  } = useGuessNumberGame();
-
   return (
-    <Typography>
+    <Box>
       <div>Address: {account}</div>
       <div>ETH: {ethereumBalance}</div>
       <div>Number of available games: {numberOfAvailableGames}</div>
@@ -61,14 +58,14 @@ const CreateGuessNumberGame = () => {
             <Button 
               variant="contained" 
               endIcon={<SendIcon />}
-              disabled={guessNumber === "-"}
+              disabled={guessNumber === "-" || waitingTx}
               onClick={() => createNewGuessNumberGame()}
             > 
               Create New Guessing Game 
             </Button>
         </Container>
       </Box>
-    </Typography>
+    </Box>
   );
 };
 

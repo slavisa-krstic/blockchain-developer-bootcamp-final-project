@@ -13,6 +13,7 @@ export const useGuessNumberGame = () => {
   const { account, chainId, active } = useWeb3React();
   const [guessNumber, setGuessNumber] = useState('-');
   const [refresh, setRefresh] = useState(0);
+  const [waitingTx, setWaitingTx] = useState(false);
 
   const address = GuessNumber.networks && GuessNumber.networks[chainId] ? 
     GuessNumber.networks[chainId].address : 
@@ -66,26 +67,32 @@ export const useGuessNumberGame = () => {
 
   const createNewGuessNumberGame = async () => {
     try {
+      setWaitingTx(true);
       const result = await guessNumberContract.createGuessingNumberGame(guessNumber);
       await result.wait(1);
+      setWaitingTx(false);
       setApplicationError("");
       setGuessNumber('-');
       setRefresh(refresh + 1);
     } catch (error) {
       setGuessNumber(guessNumber);
+      setWaitingTx(false);
       setApplicationError("Error executing 'creating guess game' transaction. Try again (raise gas price).");
     }
   }
 
   const playGuessNumberGame = async () => {
     try {
+      setWaitingTx(true);
       const result = await guessNumberContract.guessTheNumber(guessNumber);
       await result.wait(1);
+      setWaitingTx(false);
       setApplicationError("");
       setGuessNumber('-');
       setRefresh(refresh + 1);
     } catch (error) {
       setGuessNumber(guessNumber);
+      setWaitingTx(false);
       setApplicationError("Error executing 'play guess game' transaction. Try again (raise gas price).");
     }
   }
@@ -135,6 +142,7 @@ export const useGuessNumberGame = () => {
     guessNumber,
     createNewGuessNumberGame,
     playGuessNumberGame,
-    refresh
+    refresh,
+    waitingTx
   };
 };

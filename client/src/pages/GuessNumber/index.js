@@ -25,7 +25,8 @@ const GuessNumber = () => {
     numberOfAvailableGames,
     numberOfWinnings,
     numberOfLosses,
-    refresh
+    refresh,
+    waitingTx
   } = useGuessNumberGame();
 
   const {
@@ -69,7 +70,7 @@ const GuessNumber = () => {
             <Button 
               variant="contained" 
               endIcon={<SendIcon />}
-              disabled={!canPlay}
+              disabled={!canPlay || waitingTx}
               onClick={() => playGuessNumberGame()}
             > 
               Send Guessing 

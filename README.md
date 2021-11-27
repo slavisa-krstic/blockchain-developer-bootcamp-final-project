@@ -3,6 +3,7 @@
 Consensys Academy - Blockchain developer bootcamp final project - Slaviša Krstić
 
 Contact email address: slavisa.krstic@endava.com
+
 Contact discord username / email: slavisa.krstic#6923 / slavisa.krstic@endava.com
 
 # Idea
@@ -13,7 +14,7 @@ Guess the number is simple game. Owner of the games set numbers and the players 
 
 ## Deployed version url:
 
---------------------
+https://slavisa-krstic.github.io/blockchain-developer-bootcamp-final-project/
 
 ## How to run this project locally:
 ### Prerequisites
@@ -53,7 +54,7 @@ Guess Number dApp uses `Ropsten` test network. In order to deploy contract to `R
 - `cp -r build/contracts/ client/src/` - copy contract (after building contract) from `build/contracts` into `client/src/contracts` - on manual without bash command
 - `yarn install`
 - `yarn start`
-- `http://localhost:3000` - open app in browser.
+- `http://localhost:3000` or `http://localhost:3000/blockchain-developer-bootcamp-final-project` - open app in browser.
 - Metamask installed. Account that is used to deploy contract (owner) is `game owner` other accounts are `players`
 
 ## Directory structure

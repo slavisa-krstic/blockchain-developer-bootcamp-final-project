@@ -75,7 +75,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -88,7 +89,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -121,7 +123,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -166,7 +169,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -179,7 +183,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -198,7 +203,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -211,7 +217,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"GuessingNumberFailed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"GuessingNumberGameAdd\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"player\",\"type\":\"address\"}],\"name\":\"GuessingNumberSuccess\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberToBeGuessed\",\"type\":\"uint256\"}],\"name\":\"createGuessingNumberGame\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"getLuckyNumberTokenBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumberOfAvailableGames\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumberOfPlayerLosses\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumberOfPlayerWinnings\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"guessNumberOperator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_numberGuessed\",\"type\":\"uint256\"}],\"name\":\"guessTheNumber\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"isTheOwner\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"GuessingNumberFailed(address)\":{\"details\":\"emited when player missed the number\",\"params\":{\"player\":\"address of player that missed the number\"}},\"GuessingNumberGameAdd(address)\":{\"details\":\"emited when new game is created\",\"params\":{\"operator\":\"address of operator\"}},\"GuessingNumberSuccess(address)\":{\"details\":\"emited when player succeed to guess the number\",\"params\":{\"player\":\"address of player that missed the number\"}}},\"kind\":\"dev\",\"methods\":{\"createGuessingNumberGame(uint256)\":{\"details\":\"create and add new game into list of games with submitted number\",\"params\":{\"_numberToBeGuessed\":\"number that user should guess\"}},\"getLuckyNumberTokenBalance(address)\":{\"details\":\"Based on provided address get lucky token balance\"},\"getNumberOfAvailableGames()\":{\"details\":\"Get count of available games from the games\"},\"getNumberOfPlayerLosses()\":{\"details\":\"Get number of losses base on sender address\"},\"getNumberOfPlayerWinnings()\":{\"details\":\"Get number of winnings base on sender address\"},\"guessTheNumber(uint256)\":{\"details\":\"create and add new game into list of games with submitted number\",\"params\":{\"_numberGuessed\":\"number that user should guess\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"stateVariables\":{\"gameCounter\":{\"details\":\"used to store how many games are created\"},\"guessNumberOperator\":{\"details\":\"address of operator that create a games\"},\"luckyNumberToken\":{\"details\":\"lucky number token\"}},\"version\":1},\"userdoc\":{\"events\":{\"GuessingNumberFailed(address)\":{\"notice\":\"emited when player missed the number\"},\"GuessingNumberGameAdd(address)\":{\"notice\":\"emited when new game is created\"},\"GuessingNumberSuccess(address)\":{\"notice\":\"emited when player succeed to guess the number\"}},\"kind\":\"user\",\"methods\":{\"createGuessingNumberGame(uint256)\":{\"notice\":\"Create new guessing number game and set initial state\"},\"getLuckyNumberTokenBalance(address)\":{\"notice\":\"Get lucky number token balance\"},\"getNumberOfAvailableGames()\":{\"notice\":\"Get count of available games\"},\"getNumberOfPlayerLosses()\":{\"notice\":\"Get number of losses\"},\"getNumberOfPlayerWinnings()\":{\"notice\":\"Get number of winnings\"},\"guessTheNumber(uint256)\":{\"notice\":\"Create new guessing number game and set initial state\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/GuessNumber.sol\":\"GuessNumber\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/AccessControl.sol\":{\"keccak256\":\"0x183481af1c40d2efb26b86f63d6fe9e22f24c87e436d60a69f261b38500e7cd6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f562746c399ae045994a88b2218d1238a349de07afbfb305aab0c7fdbc2954cc\",\"dweb:/ipfs/QmYoFrDD2c6fi9CpPz1bjCMAyketjZ3G7ByUSVQMntysms\"]},\"@openzeppelin/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0xfe0edb09653ed10e8a1bfe03eb9b0ff06775666eee817a95bd3d0799f1ee2b44\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fbb9d503857eab98f87465df0f02fef03083f30c1dbec82f319f41aaadae19b4\",\"dweb:/ipfs/QmTxDshRAMtoeM45YrTzQZdpmy4mt4scCNHjfZiWSvdETF\"]},\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x6bb804a310218875e89d12c053e94a13a4607cdf7cc2052f3e52bd32a0dc50a1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b2ebbbe6d0011175bd9e7268b83de3f9c2f9d8d4cbfbaef12aff977d7d727163\",\"dweb:/ipfs/Qmd5c7Vxtis9wzkDNhxwc6A2QT5H9xn9kfjhx7qx44vpro\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xb03df8481a954604ad0c9125680893b2e3f7ff770fe470e38b89ac61b84e8072\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b34655953d18ba3a45b762fb6bdbb6549af69a27435e10ece178742bf70baf45\",\"dweb:/ipfs/QmcqjUoFLLMyx7dbwSHUnDBH6aphkVHXWQvQRRev5EAWEh\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x027b891937d20ccf213fdb9c31531574256de774bda99d3a70ecef6e1913ed2a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://087318b21c528119f649899f5b5580566dd8d7b0303d4904bd0e8580c3545f14\",\"dweb:/ipfs/Qmbn5Mj7aUn8hJuQ8VrQjjEXRsXyJKykgnjR9p4C3nfLtL\"]},\"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0x83fe24f5c04a56091e50f4a345ff504c8bff658a76d4c43b16878c8f940c53b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d4c3df1a7ca104b633a7d81c6c6f5192367d150cd5a32cba81f7f27012729013\",\"dweb:/ipfs/QmSim72e3ZVsfgZt8UceCvbiSuMRHR6WDsiamqNzZahGSY\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0x90565a39ae45c80f0468dc96c7b20d0afc3055f344c8203a0c9258239f350b9f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://26e8b38a7ac8e7b4463af00cf7fff1bf48ae9875765bf4f7751e100124d0bc8c\",\"dweb:/ipfs/QmWcsmkVr24xmmjfnBQZoemFniXjj3vwT78Cz6uqZW1Hux\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0x391d3ba97ab6856a16b225d6ee29617ad15ff00db70f3b4df1ab5ea33aa47c9d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d636ba90bbbeed04a1ea7fe9ec2466757e30fd38ba2ca173636dbf69a518735e\",\"dweb:/ipfs/QmQwCB2BHnEuYR22PYt9HkpbgeFDhq4rHmaYqAZbX3WRC7\"]},\"@openzeppelin/contracts/utils/introspection/ERC165.sol\":{\"keccak256\":\"0x5718c5df9bd67ac68a796961df938821bb5dc0cd4c6118d77e9145afb187409b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d10e1d9b26042424789246603906ad06143bf9a928f4e99de8b5e3bdc662f549\",\"dweb:/ipfs/Qmejonoaj5MLekPus229rJQHcC6E9dz2xorjHJR84fMfmn\"]},\"@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"keccak256\":\"0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6\",\"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx\"]},\"project:/contracts/GuessNumber.sol\":{\"keccak256\":\"0x7af94ce1837a41c9702b29839ee8933ea2fcb705cccf76372cb6b578cc30956e\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://c5b44e49182d69fc86e26bbba2b1d622b5a85809c04fd14f447683b1ba5bb350\",\"dweb:/ipfs/QmYJCgXwYG4EuR929RXJMMQvfKtg6oNnYPPxURKH2uC7zL\"]},\"project:/contracts/LuckyNumberToken.sol\":{\"keccak256\":\"0x1efa68a33584712b58ce293d8507de676ab7ac253c97b0da59ad59f80ec0b7af\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7150985fd1764cf25779929109b28e4ea6124d68aba06fc0b2eb9853ed0dfacb\",\"dweb:/ipfs/QmeNfHvn4HQvd6f9f9CWPGX2dSCiniZGezhxRyK2vbk4iz\"]}},\"version\":1}",
@@ -16356,6 +16363,12 @@
     "version": "0.8.10+commit.fc410830.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0x50c6b044F623A2d3cD9a1E4782D6FA712A0026bB",
+      "transactionHash": "0xe96a101eda3047e33127bddfcd0a4ddc9731140e4524af5aad5ba56cf5742398"
+    },
     "1337": {
       "events": {
         "0xaa4966ff60f4429a6fbddef4c7a97ef9538281a119fe572c0a6f0f5f1a896b86": {
@@ -16423,7 +16436,8 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-27T19:52:15.562Z",
+  "updatedAt": "2021-11-27T20:13:36.368Z",
+  "networkType": "ethereum",
   "devdoc": {
     "events": {
       "GuessingNumberFailed(address)": {

@@ -24,7 +24,7 @@ export default function App () {
           <Switch>
             <Suspense fallback={<Loading />}>
               <Layout>
-                <Route exact path="/" component={Home} />
+                <Route path="/" component={Home} />
               </Layout>
             </Suspense>
           </Switch>

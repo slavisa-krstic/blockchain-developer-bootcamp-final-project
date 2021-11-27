@@ -1,0 +1,17 @@
+> Network name:    'ropsten'
+> Network id:      3
+
+Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0x69ab56527266e11ece8b6491bfcf53e3b3e57ee4b17fb76de17406bd163f7a33
+   > contract address:    0x71a8950b051cA63d0F06f84b7569a688e58BD1B0
+
+Deploying 'LuckyNumberToken'
+   ----------------------------
+   > transaction hash:    0xc0e68efe119a0a1df733dd2b9db3115e320a9141c9cc2979b544c7e1883dcde0
+   > contract address:    0xCA930Aea7F82188b0d858577A53d4fE39edC6AFC
+
+Deploying 'GuessNumber'
+   -----------------------
+   > transaction hash:    0xe96a101eda3047e33127bddfcd0a4ddc9731140e4524af5aad5ba56cf5742398
+   > contract address:    0x50c6b044F623A2d3cD9a1E4782D6FA712A0026bB
