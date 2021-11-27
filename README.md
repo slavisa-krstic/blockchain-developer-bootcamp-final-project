@@ -16,7 +16,9 @@ https://slavisa-krstic.github.io/blockchain-developer-bootcamp-final-project/
 ## How to run this project locally:
 ### Prerequisites
 
-- Node.js >= v12
+- Node.js >= v14
+- npm >= ^7
+- yarn >= ^1.16.0
 - Truffle and Ganache
 - Npm and Yarn
 - `git checkout main`
@@ -61,13 +63,21 @@ Guess Number dApp uses `Ropsten` test network. In order to deploy contract to `R
 - `migrations`: Migration files for deploying contracts in `contracts` directory.
 - `test`: Tests for smart contracts.
 
-## Owner view - Game organizer - Create guess number games
+## Owner view "Production" - Game organizer - Create guess number games
 
 https://user-images.githubusercontent.com/91070375/143722359-575cdbb4-7792-4d98-b068-00cb8b125619.mp4
 
-## Player view - Playing guess number game
+## Player view "Production" - Playing guess number game
 
 https://user-images.githubusercontent.com/91070375/143722366-86c210d3-a610-4891-86ec-0ecd48c77ef3.mp4
+
+## Owner view "Local" - Game organizer - Create guess number games
+
+https://user-images.githubusercontent.com/91070375/143723548-1643b470-dcab-40c1-9a33-92bf252226d2.mp4
+
+## Player view "Local" - Playing guess number game
+
+https://user-images.githubusercontent.com/91070375/143723560-0628a8eb-ae2e-4a9a-870c-22b92372e6c1.mp4
 
 ## Build screenshots (local/develop):
 ![Alt text](images/build.png?raw=true "build")
