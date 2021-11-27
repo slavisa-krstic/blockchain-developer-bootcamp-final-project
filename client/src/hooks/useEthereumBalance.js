@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useWeb3React } from '@web3-react/core';
-import { useAppContext } from '../context/AppContext';
 import { formatEther } from '@ethersproject/units';
+
+// Application context
+import { useAppContext } from '../context/AppContext';
 
 export const useEthereumBalance = () => {
   const { active, library, account } = useWeb3React();

@@ -1,10 +1,16 @@
 import { useEffect } from 'react';
-import { useEthContract } from './useEthContract';
-import GuessNumber from '../contracts/GuessNumber.json';
 import { useWeb3React } from '@web3-react/core';
-import { useAppContext } from '../context/AppContext';
 import { formatUnits } from '@ethersproject/units';
 import { AddressZero } from '@ethersproject/constants';
+
+// Hooks
+import { useEthContract } from './useEthContract';
+
+// Guess number contract
+import GuessNumber from '../contracts/GuessNumber.json';
+
+// Application context
+import { useAppContext } from '../context/AppContext';
 
 export const useLuckyNumberToken = (refresh) => {
   const { account, chainId, active } = useWeb3React();

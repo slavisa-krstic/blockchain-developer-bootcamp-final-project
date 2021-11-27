@@ -76,7 +76,8 @@ const GuessNumber = () => {
             </Button>
         </Container>
         {!canPlay && <Container maxWidth="sm" className={classes.guessSendButtons}>
-          <Box className={classes.canNotPlay}>Waiting for organizer to create more games!!!</Box>
+          {numberOfAvailableGames > 5 && guessNumber === "-" &&<Box className={classes.canNotPlay}>Please select your number</Box>}
+          {numberOfAvailableGames < 6 && <Box className={classes.canNotPlay}>Waiting for organizer to create more games!!!</Box>}
         </Container>}
       </Box>
     </Box>

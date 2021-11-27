@@ -56,6 +56,16 @@ module.exports = {
       port: 8545,
       network_id: "1337"
     },
+    ropsten: {
+      provider: () =>
+        new HDWalletProvider(
+          process.env.WALLET_MNEMONIC,
+          `https://ropsten.infura.io/v3/${process.env.INFURA_PROJECT_ID}`
+        ),
+      network_id: 3, // Ropsten
+      gas: 4000000,
+      from: `${process.env.OWNER_ID}`
+    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port

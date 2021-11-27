@@ -1,8 +1,9 @@
 import { useEffect} from 'react';
 import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core';
-
-import { useAppContext } from '../context/AppContext';
 import { InjectedConnector } from '@web3-react/injected-connector';
+
+// Application context
+import { useAppContext } from '../context/AppContext';
 
 export const useConnectNetwork = () => {
   const { activate, active, account, deactivate } = useWeb3React();

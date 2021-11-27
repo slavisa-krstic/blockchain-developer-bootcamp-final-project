@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useEthContract } from './useEthContract';
-import GuessNumber from '../contracts/GuessNumber.json';
 import { useWeb3React } from '@web3-react/core';
-import { useAppContext } from '../context/AppContext';
 import { AddressZero } from '@ethersproject/constants';
+
+// Guess number contract
+import GuessNumber from '../contracts/GuessNumber.json';
+
+// Application context
+import { useAppContext } from '../context/AppContext';
 
 export const useGuessNumberGame = () => {
   const { account, chainId, active } = useWeb3React();

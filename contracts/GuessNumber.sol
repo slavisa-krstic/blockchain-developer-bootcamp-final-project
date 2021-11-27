@@ -2,10 +2,9 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/access/AccessControlEnumerable.sol";
 import "./LuckyNumberToken.sol";
 
-contract GuessNumber is Ownable, AccessControlEnumerable {
+contract GuessNumber is Ownable {
   /// @notice counter to keep track how many games exist
   /// @dev used to store how many games are created
   uint gameCounter;
