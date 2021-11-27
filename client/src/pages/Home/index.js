@@ -43,7 +43,7 @@ const Home = () => {
       }
       {applicationError && 
         <React.Fragment>
-          <Container maxWidth="sm" className={classes.notConnected}>
+          <Container maxWidth="sm" className={classes.connected}>
             <div>{applicationError}</div>
           </Container>
         </React.Fragment>

@@ -31,7 +31,7 @@ contract GuessNumber is Ownable {
   }
 
   mapping(uint => GuessNumberGame) private guessNumberGames;
-  bool[] private games;
+  uint[] private games;
 
   /// @notice modifier to check that owner can not guess the game
   modifier isNotOwner() {
@@ -41,15 +41,8 @@ contract GuessNumber is Ownable {
 
   /// @notice modifier to check if it is possible to play game
   modifier isGameAvailable() {
-    uint numbOfGame = 0;
-    // Count number of available games
-    for (uint i = 1; i <= games.length; i++) {
-      if (games[i-1] == true) {
-        numbOfGame++;
-      }
-    }
     // System must have more that a 5 games ready to be played
-    require(numbOfGame > 5, "Game is not ready to be played");
+    require(games.length > 5, "Game is not ready to be played");
     _;
   }
 
@@ -96,9 +89,9 @@ contract GuessNumber is Ownable {
     guessNumberGames[gameCounter].numberToBeGuessed = _numberToBeGuessed;
     
     // Set game counter
+    games.push(gameCounter);
     gameCounter = gameCounter + 1;
     // Add new game that is available to be played
-    games.push(true);
 
     // Publish event that new game has been added
     emit GuessingNumberGameAdd(guessNumberOperator);
@@ -115,7 +108,6 @@ contract GuessNumber is Ownable {
     // played game
     guessNumberGames[index].guessNumberPlayer = msg.sender;
     guessNumberGames[index].guessNumber = _numberGuessed;
-    games[index] = false;
 
     // Check if player successfully guessed the 
     if (guessNumberGames[index].guessNumber == guessNumberGames[index].numberToBeGuessed) {
@@ -163,41 +155,33 @@ contract GuessNumber is Ownable {
     return uint256(keccak256(abi.encodePacked(block.difficulty, block.timestamp)));
   }
 
+  /// @notice Remove element from array based on provided index
+  /// @param index index that should be removed from array
+  function remove(uint index) private {
+    games[index] = games[games.length - 1];
+    games.pop();
+  }
+
   /// @notice Get number of losses
   /// @dev Get number of losses base on sender address
-  function findNextGame() private view returns (uint) {
+  function findNextGame() private returns (uint) {
     // Find available game
-    uint numbOfGames = 0;
-    bool gameFound = false;
-  
-    // Cound number of available games
-    for (uint i = 0; i < games.length; i++) {
-      if (games[i] == true) {
-        numbOfGames++;
-      }
-    }
+    uint numbOfGames = games.length - 1;
 
     // DEMO Find random number between 0 and number of games
-    uint random = notReallyRandom() % numbOfGames + 1;
+    uint random = notReallyRandom() % numbOfGames;
 
-    // Get demo random number
-    uint game = 0;
-    for (uint i = 0; i < games.length; i++) {
-      if (games[i] == true) {
-         game++;
-      }
-
-      if (game == random) {
-        gameFound = true;
-        return i;
-      }
+    // Just in case if something happen odd with random function set next games to first in a row
+    // Never should happen
+    if (random > numbOfGames) {
+      random = 0;
     }
 
-    // Check if game is not found - will be false if return doesn't return anything
-    require(gameFound == false, "Game could not be found");
+    // Get demo random number
+    uint nextGameIndex = games[random];
+    remove(random);
 
-    // Function will never come here. Result must be returned
-    return 0;
+    return nextGameIndex;
   }
 
   /// @notice Get lucky number token balance
@@ -209,15 +193,6 @@ contract GuessNumber is Ownable {
   /// @notice Get count of available games
   /// @dev Get count of available games from the games
   function getNumberOfAvailableGames() public view returns (uint) {
-    uint numbOfGames = 0;
-
-    // Cound number of available games
-    for (uint i = 0; i < games.length; i++) {
-      if (games[i] == true) {
-        numbOfGames++;
-      }
-    }
-
-    return numbOfGames;
+    return games.length;
   }
 }

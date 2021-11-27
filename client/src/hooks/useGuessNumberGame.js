@@ -24,7 +24,8 @@ export const useGuessNumberGame = () => {
     setNumberOfWinnings, numberOfWinnings,
     setNumberOfLosses, numberOfLosses,
     setIsTheOwner, isTheOwner,
-    setNumberOfAvailableGames, numberOfAvailableGames
+    setNumberOfAvailableGames, numberOfAvailableGames,
+    setApplicationError
   } = useAppContext();
 
   const getNumberOfWinnings = async () => {
@@ -67,10 +68,12 @@ export const useGuessNumberGame = () => {
     try {
       const result = await guessNumberContract.createGuessingNumberGame(guessNumber);
       await result.wait(1);
+      setApplicationError("");
       setGuessNumber('-');
       setRefresh(refresh + 1);
     } catch (error) {
       setGuessNumber(guessNumber);
+      setApplicationError("Error executing 'creating guess game' transaction. Try again (raise gas price).");
     }
   }
 
@@ -78,10 +81,12 @@ export const useGuessNumberGame = () => {
     try {
       const result = await guessNumberContract.guessTheNumber(guessNumber);
       await result.wait(1);
+      setApplicationError("");
       setGuessNumber('-');
       setRefresh(refresh + 1);
     } catch (error) {
       setGuessNumber(guessNumber);
+      setApplicationError("Error executing 'play guess game' transaction. Try again (raise gas price).");
     }
   }
 

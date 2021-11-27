@@ -2,6 +2,9 @@
 # blockchain-developer-bootcamp-final-project
 Consensys Academy - Blockchain developer bootcamp final project - Slaviša Krstić
 
+Contact email address: slavisa.krstic@endava.com
+Contact discord username / email: slavisa.krstic#6923 / slavisa.krstic@endava.com
+
 # Idea
 Idea of the final project is to create "Guess the Number" dapp is a fun educational game that challenges kids to find a number based on greater than or less than feedback. One player set the number and rules for other player to guess the number and receive reword. Player that is guessing the number have 3 shots to guess a right number. Based on number of guesses tries, player will receive proper reword.
 
@@ -47,7 +50,7 @@ Guess Number dApp uses `Ropsten` test network. In order to deploy contract to `R
 ### Frontend
 
 - `cd client`
-- copy contract (after building contract) from `build/contracts` into `client/src/contracts` - optional
+- `cp -r build/contracts/ client/src/` - copy contract (after building contract) from `build/contracts` into `client/src/contracts` - on manual without bash command
 - `yarn install`
 - `yarn start`
 - `http://localhost:3000` - open app in browser.
@@ -61,10 +64,13 @@ Guess Number dApp uses `Ropsten` test network. In order to deploy contract to `R
 - `test`: Tests for smart contracts.
 
 ## Build screenshots:
-![Alt text](images/build.png?raw=true "test")
+![Alt text](images/build.png?raw=true "build")
 
 ## Test screenshots:
 ![Alt text](images/test.png?raw=true "test")
+
+## Deploy screenshots:
+![Alt text](images/deploy.png?raw=true "deploy")
 
 ## Simple workflow
 

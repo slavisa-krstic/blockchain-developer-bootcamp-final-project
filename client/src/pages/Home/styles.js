@@ -7,5 +7,13 @@ export default makeStyles(() => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+  },
+  connected: {
+    marginTop: "30px",
+    fontSize: "12px",
+    display: "flex",
+    color: "red",
+    justifyContent: "center",
+    alignItems: "center",
   }
 }));
