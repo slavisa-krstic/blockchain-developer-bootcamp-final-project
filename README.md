@@ -34,7 +34,7 @@ https://slavisa-krstic.github.io/blockchain-developer-bootcamp-final-project/
 - `truffle migrate --network develop` - deploy contracts on local network
 -  network id is `1337`, port `8545`, use same network id in Metamask
 
-### contract deployment
+### Contract deployment
 Guess Number dApp uses `Ropsten` test network. In order to deploy contract to `Ropsten`: 
 
 - Metamask installed and mnemonic saved
@@ -63,6 +63,14 @@ Guess Number dApp uses `Ropsten` test network. In order to deploy contract to `R
 - `contracts`: Smart contracts that are deployed in the Ropsten testnet.
 - `migrations`: Migration files for deploying contracts in `contracts` directory.
 - `test`: Tests for smart contracts.
+
+## Owner view - Game organizer - Create guess number games
+
+https://user-images.githubusercontent.com/91070375/143722359-575cdbb4-7792-4d98-b068-00cb8b125619.mp4
+
+## Player view - Playing guess number game
+
+https://user-images.githubusercontent.com/91070375/143722366-86c210d3-a610-4891-86ec-0ecd48c77ef3.mp4
 
 ## Build screenshots (local/develop):
 ![Alt text](images/build.png?raw=true "build")
