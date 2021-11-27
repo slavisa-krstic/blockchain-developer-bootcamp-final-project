@@ -81,21 +81,14 @@ https://user-images.githubusercontent.com/91070375/143722366-86c210d3-a610-4891-
 ## Deploy screenshots (local/develop):
 ![Alt text](images/deploy.png?raw=true "deploy")
 
-## Simple workflow
-
-1. Open application / game web address
-2. Connect account with Metamask (connect)
-3. Choose number and press `send guessing`
-4. Game outcome is calculated and visible (number of winnings / losses is changed) and for winning players is rewarded with 500 Lucky Number Tokens (LNT).
-
-## Simple workflow local - owner
+## Simple workflow - owner
 
 1. Choose contract owner account in metamask
 2. Choose number and create a new game
 3. Game number increases
 4. For players to be able to play game more then 5 games are needed  
 
-## Simple workflow local - player
+## Simple workflow - player
 
 1. Open application / game web address
 2. Connect account with Metamask (connect)
