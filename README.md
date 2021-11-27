@@ -50,7 +50,7 @@ Guess Number dApp uses `Ropsten` test network. In order to deploy contract to `R
 ### Frontend
 
 - `cd client`
-- `cp -r build/contracts/ client/src/` - copy contract (after building contract) from `build/contracts` into `client/src/contracts` - on manual without bash command
+- `cp -r build/contracts/ client/src/` - copy contract (after building contract) from `build/contracts` into `client/src/contracts` - on manual without bash command (copy builded contract after migration)
 - `yarn install`
 - `yarn start`
 - `http://localhost:3000` or `http://localhost:3000/blockchain-developer-bootcamp-final-project` - open app in browser.
