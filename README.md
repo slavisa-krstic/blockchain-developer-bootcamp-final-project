@@ -19,7 +19,7 @@ https://slavisa-krstic.github.io/blockchain-developer-bootcamp-final-project/
 - Node.js >= v14
 - npm >= ^7
 - yarn >= ^1.16.0
-- Truffle and Ganache
+- Truffle and Ganache - Truffle v5.4.22 (core: 5.4.22) / Ganache CLI v6.12.2 (ganache-core: 2.13.2)
 - Npm and Yarn
 - `git checkout main`
 - Metamask installed
