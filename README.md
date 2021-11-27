@@ -64,13 +64,13 @@ Guess Number dApp uses `Ropsten` test network. In order to deploy contract to `R
 - `migrations`: Migration files for deploying contracts in `contracts` directory.
 - `test`: Tests for smart contracts.
 
-## Build screenshots:
+## Build screenshots (local/develop):
 ![Alt text](images/build.png?raw=true "build")
 
 ## Test screenshots:
 ![Alt text](images/test.png?raw=true "test")
 
-## Deploy screenshots:
+## Deploy screenshots (local/develop):
 ![Alt text](images/deploy.png?raw=true "deploy")
 
 ## Simple workflow
