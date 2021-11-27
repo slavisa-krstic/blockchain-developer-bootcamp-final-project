@@ -2,14 +2,19 @@
 pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/AccessControlEnumerable.sol";
+import "./LuckyNumberToken.sol";
 
-contract GuessNumber is Ownable {
+contract GuessNumber is Ownable, AccessControlEnumerable {
   /// @notice counter to keep track how many games exist
   /// @dev used to store how many games are created
   uint gameCounter;
 
   /// @dev address of operator that create a games
   address public guessNumberOperator;
+
+  /// @dev lucky number token
+  LuckyNumberToken private luckyNumberToken;
   
   /// @dev enum that defines state of the games
   enum GuessNumberState {
@@ -49,6 +54,12 @@ contract GuessNumber is Ownable {
     _;
   }
 
+  /// @notice modifier to check if number to be guessed is in a range between 1 and 10
+  modifier checkTheNumber(uint _numberToBeGuessed) {
+    require(_numberToBeGuessed > 0 && _numberToBeGuessed < 11, "Number must be between 1 and 10");
+    _;
+  }
+
   /// @notice emited when new game is created
   /// @dev emited when new game is created
   /// @param operator address of operator
@@ -66,12 +77,21 @@ contract GuessNumber is Ownable {
 
   constructor() {
     guessNumberOperator = owner();
+    luckyNumberToken = new LuckyNumberToken();
+  }
+
+  function isTheOwner() public view returns (bool) {
+    if (msg.sender != guessNumberOperator) {
+      return false;
+    }
+
+    return true;
   }
 
   /// @notice Create new guessing number game and set initial state
   /// @param _numberToBeGuessed number that user should guess
   /// @dev create and add new game into list of games with submitted number
-  function createGuessingNumberGame(uint _numberToBeGuessed) public onlyOwner {
+  function createGuessingNumberGame(uint _numberToBeGuessed) public onlyOwner checkTheNumber(_numberToBeGuessed) {
     // Set data of the game
     guessNumberGames[gameCounter].gameState = GuessNumberState.GUESSING_NUMBER_CREATE_GAME;
     guessNumberGames[gameCounter].numberToBeGuessed = _numberToBeGuessed;
@@ -101,6 +121,7 @@ contract GuessNumber is Ownable {
     // Check if player successfully guessed the 
     if (guessNumberGames[index].guessNumber == guessNumberGames[index].numberToBeGuessed) {
       guessNumberGames[index].gameState = GuessNumberState.GUESSING_FINISHED_SUCCESS;
+      luckyNumberToken.mint(msg.sender, 500);
       emit GuessingNumberSuccess(msg.sender);
       return true;
     }
@@ -180,4 +201,24 @@ contract GuessNumber is Ownable {
     return 0;
   }
 
+  /// @notice Get lucky number token balance
+  /// @dev Based on provided address get lucky token balance
+  function getLuckyNumberTokenBalance(address _address) public view returns (uint) {
+    return luckyNumberToken.balanceOf(_address);
+  }
+
+  /// @notice Get count of available games
+  /// @dev Get count of available games from the games
+  function getNumberOfAvailableGames() public view returns (uint) {
+    uint numbOfGames = 0;
+
+    // Cound number of available games
+    for (uint i = 0; i < games.length; i++) {
+      if (games[i] == true) {
+        numbOfGames++;
+      }
+    }
+
+    return numbOfGames;
+  }
 }

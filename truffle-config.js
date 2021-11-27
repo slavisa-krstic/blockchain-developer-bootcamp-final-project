@@ -51,6 +51,11 @@ module.exports = {
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
+    develop: {
+      host: "127.0.0.1",
+      port: 8545,
+      network_id: "1337"
+    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
@@ -93,7 +98,8 @@ module.exports = {
 
   // Set default mocha options here, use special reporters etc.
   mocha: {
-    // timeout: 100000
+    enableTimeouts: false,
+    before_timeout: 120000
   },
 
   // Configure your compilers
